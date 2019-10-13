@@ -4,7 +4,7 @@
   "description": "node server",
   "main": "src/server.js",
   "scripts": {
-    "start": "node --exec babel-node src/index.js",
+    "start": "babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
     "build": "webpack --mode production",
     "start:prod": "node dist/main.js",
@@ -38,5 +38,8 @@
     "prettier": "^1.18.2",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "koa": "^2.10.0"
   }
 }
