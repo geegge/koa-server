@@ -1,0 +1,41 @@
+{
+  "name": "koa-server",
+  "version": "0.1.0",
+  "description": "node server",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --exec babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "webpack --mode production",
+    "start:prod": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geegge/koa-server.git"
+  },
+  "keywords": [
+    "node",
+    "koa"
+  ],
+  "author": "Günther Lösel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geegge/koa-server/issues"
+  },
+  "homepage": "https://github.com/geegge/koa-server#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.18.2",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9"
+  }
+}
