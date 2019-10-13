@@ -8,7 +8,7 @@
     "dev": "nodemon --exec babel-node src/index.js",
     "build": "webpack --mode production",
     "start:prod": "node dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2",
     "webpack": "^4.41.1",
