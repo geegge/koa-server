@@ -1,16 +1,30 @@
 const Koa = require("koa");
+const CircularBuffer = require("circular-buffer");
 
 const server = {
-  sayHello: () => "Hello World",
+  prepareJson: (dataObject = {}) => {
+    const data = { ...dataObject };
+    return JSON.stringify(data).substring(0, 500);
+  },
   init: () => {
     const app = new Koa();
+    const buffer = new CircularBuffer(3);
 
     app.use(async ctx => {
-      ctx.body = "Hello World";
+      try {
+        if (Object.keys(ctx.request.query).length > 0)
+          buffer.enq(prepareJson(ctx.request.query));
+
+        let bufferItems = buffer.toarray();
+        ctx.body = bufferItems.join("\n");
+      } catch (error) {
+        ctx.body = ":-)";
+      }
     });
 
-    app.listen(3000);
+    app.listen(8036);
   }
 };
+const prepareJson = server.prepareJson.bind(server);
 
 module.exports = server;
